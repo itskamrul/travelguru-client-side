@@ -1,16 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { Button } from 'react-bootstrap';
-import useAuth from '../../hooks/useAuth';
 
-const MyBooking = () => {
+const AllBooking = () => {
   const [bookings, setBookings] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const { users } = useAuth();
-  const email = users.email;
 
   //get data
   useEffect(() => {
-    fetch(`http://localhost:5000/myBooking/${email}`)
+    fetch('http://localhost:5000/allBooking')
       .then(res => res.json())
       .then(data => {
         setBookings(data);
@@ -38,7 +35,7 @@ const MyBooking = () => {
   } else {
     return (
       <div className="container">
-        <h2>Your Booking result</h2>
+        <h2>All Booking result</h2>
         <div>
           {bookings.map(booking => (
             <div
@@ -73,4 +70,4 @@ const MyBooking = () => {
   }
 };
 
-export default MyBooking;
+export default AllBooking;

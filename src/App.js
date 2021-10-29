@@ -12,6 +12,7 @@ import AddPlace from './Components/AddPlace/AddPlace';
 import Places from './Components/Places/Places';
 import MyBooking from './Components/MyBooking/MyBooking';
 import PlaceDetails from './Components/PlaceDetails/PlaceDetails';
+import AllBooking from './Components/AllBooking/AllBooking';
 
 function App() {
   return (
@@ -27,6 +28,9 @@ function App() {
             <Route path="/home">
               <Header></Header>
               <Places></Places>
+            </Route>
+            <Route path="/allBooking">
+              <AllBooking></AllBooking>
             </Route>
             <Route path="/addPlace">
               <AddPlace></AddPlace>

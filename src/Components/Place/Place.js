@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button, Card, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import './Place.css';
 
 const Place = ({ place, index, handleBooking }) => {
   const { _id, name, img, destinations, price } = place;
@@ -8,8 +9,12 @@ const Place = ({ place, index, handleBooking }) => {
   return (
     <div>
       <Col>
-        <Card className="product-container">
-          <Card.Img className="card-image img-fluid" variant="top" src={img} />
+        <Card className="bg-white shadow rounded border-0 p-1">
+          <Card.Img
+            className="card-image img-fluid rounded"
+            variant="top"
+            src={img}
+          />
           <Card.Body>
             <Card.Title>{name}</Card.Title>
             <Card.Title>Price: ${price}</Card.Title>
