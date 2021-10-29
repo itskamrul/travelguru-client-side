@@ -31,6 +31,9 @@ const NavBar = () => {
           <Nav.Link as={HashLink} to="/allBooking">
             All Booking
           </Nav.Link>
+          <Nav.Link as={HashLink} to="/bookingDashboard">
+            Dashboard
+          </Nav.Link>
           <Nav.Link as={HashLink} to="/addPlace">
             Add Places
           </Nav.Link>

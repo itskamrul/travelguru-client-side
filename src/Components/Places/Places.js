@@ -20,7 +20,7 @@ const Places = () => {
   const handleBooking = index => {
     if (users.email) {
       const data = places[index];
-      data._id = data._id + 1;
+      data._id = data._id + '';
       data.email = users.email;
       data.status = 'pending';
 
