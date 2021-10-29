@@ -25,17 +25,17 @@ const NavBar = () => {
           <Nav.Link as={HashLink} to="/home">
             Home
           </Nav.Link>
-          <Nav.Link as={HashLink} to="/allServices">
-            Services
+          <Nav.Link as={HashLink} to="/myBooking">
+            My Booking
           </Nav.Link>
-          <Nav.Link as={HashLink} to="/allProduct">
-            Products
+          <Nav.Link as={HashLink} to="/addPlace">
+            Add Places
           </Nav.Link>
           <Nav.Link as={HashLink} to="/about">
             About us
           </Nav.Link>
 
-          <li>{users?.displayName ? users.displayName : users?.email}</li>
+          <li>{users?.displayName}</li>
           {users?.email ? (
             <Button onClick={logOut} className="btn button ms-2">
               Logout

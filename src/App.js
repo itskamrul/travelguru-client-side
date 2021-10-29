@@ -8,6 +8,10 @@ import Footer from './Components/Shared/Footer/Footer';
 import NotFound from './Components/NotFound/NotFound';
 import AuthProvider from './contexts/AuthProvider';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
+import AddPlace from './Components/AddPlace/AddPlace';
+import Places from './Components/Places/Places';
+import MyBooking from './Components/MyBooking/MyBooking';
+import PlaceDetails from './Components/PlaceDetails/PlaceDetails';
 
 function App() {
   return (
@@ -18,9 +22,20 @@ function App() {
           <Switch>
             <Route exact path="/">
               <Header></Header>
+              <Places></Places>
             </Route>
             <Route path="/home">
               <Header></Header>
+              <Places></Places>
+            </Route>
+            <Route path="/addPlace">
+              <AddPlace></AddPlace>
+            </Route>
+            <Route path="/placeDetails/:placeId">
+              <PlaceDetails></PlaceDetails>
+            </Route>
+            <Route path="/myBooking">
+              <MyBooking></MyBooking>
             </Route>
             <Route path="/about">
               <About></About>
