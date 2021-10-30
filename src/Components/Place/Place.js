@@ -17,20 +17,12 @@ const Place = ({ place, index, handleBooking }) => {
           />
           <Card.Body>
             <Card.Title>{name}</Card.Title>
-            <Card.Title>Price: ${price}</Card.Title>
             <Card.Text>{destinations}</Card.Text>
             <div className="d-flex justify-content-between">
+              <h4 className="mt-2">${price}</h4>
               <Link className="btn-regular" to={`/placeDetails/${_id}`}>
-                See details
+                Book Now
               </Link>
-              <Button
-                className="btn-success fw-bold "
-                onClick={() => {
-                  handleBooking(index);
-                }}
-              >
-                Book now
-              </Button>
             </div>
           </Card.Body>
         </Card>
