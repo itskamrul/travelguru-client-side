@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { Row } from 'react-bootstrap';
-// import usePlaces from '../../hooks/usePlaces';
 import Place from '../Place/Place';
 
 const Places = () => {

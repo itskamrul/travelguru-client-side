@@ -20,14 +20,17 @@ const MyBooking = () => {
 
   //delete my booking place
   const handleDelete = id => {
-    fetch(`http://localhost:5000/deleteBooking/${id}`, {
-      method: 'DELETE',
-      headers: {
-        'content-type': 'application/json',
-      },
-    })
-      .then(res => res.json())
-      .then(result => console.log(result));
+    const handleConfirm = window.confirm('Are you sure to delete');
+    if (handleConfirm) {
+      fetch(`http://localhost:5000/deleteBooking/${id}`, {
+        method: 'DELETE',
+        headers: {
+          'content-type': 'application/json',
+        },
+      })
+        .then(res => res.json())
+        .then(result => console.log(result));
+    }
     console.log(id);
   };
   if (isLoading) {

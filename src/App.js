@@ -12,9 +12,9 @@ import AddPlace from './Components/AddPlace/AddPlace';
 import Places from './Components/Places/Places';
 import MyBooking from './Components/MyBooking/MyBooking';
 import PlaceDetails from './Components/PlaceDetails/PlaceDetails';
-import AllBooking from './Components/AllBooking/AllBooking';
 import BookingDash from './Components/BookingDash/BookingDash';
 import Support from './Components/Support/Support';
+import TravellerPackages from './Components/TravellerPackages/TravellerPackages';
 
 function App() {
   return (
@@ -26,15 +26,15 @@ function App() {
             <Route exact path="/">
               <Header></Header>
               <Places></Places>
+              <TravellerPackages></TravellerPackages>
+              <Support></Support>
             </Route>
             <Route path="/home">
               <Header></Header>
               <Places></Places>
+              <TravellerPackages></TravellerPackages>
               <Support></Support>
             </Route>
-            <PrivateRoute path="/allBooking">
-              <AllBooking></AllBooking>
-            </PrivateRoute>
             <PrivateRoute path="/addPlace">
               <AddPlace></AddPlace>
             </PrivateRoute>

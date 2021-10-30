@@ -17,14 +17,18 @@ const BookingDash = () => {
 
   //handle delete
   const handleDelete = id => {
-    fetch(`http://localhost:5000/deleteBooking/${id}`, {
-      method: 'DELETE',
-      headers: {
-        'content-type': 'application/json',
-      },
-    })
-      .then(res => res.json())
-      .then(result => console.log(result));
+    const handleConfirm = window.confirm('Are you sure to delete');
+    if (handleConfirm) {
+      fetch(`http://localhost:5000/deleteBooking/${id}`, {
+        method: 'DELETE',
+        headers: {
+          'content-type': 'application/json',
+        },
+      })
+        .then(res => res.json())
+        .then(result => console.log(result));
+    }
+
     console.log(id);
   };
 
@@ -54,22 +58,23 @@ const BookingDash = () => {
     );
   } else {
     return (
-      <div className="container">
+      <div className="container ">
         <h2> Booking Dashboard</h2>
-        <div>
+        <div className="row">
           {bookings.map(booking => (
-            <div
-              key={booking._id}
-              className="d-flex mt-3 bg-white shadow rounded  p-2"
-            >
-              <img className="w-25 rounded" src={booking.img} alt="" />
-              <div className="text-start ms-3">
-                <h4>{booking.name}</h4>
-                <h5>Price: ${booking.price}</h5>
-                <h5>
+            <div key={booking._id} className=" text-start col-md-4 mt-3   p-2">
+              {/* <img className="w-25 rounded" src={booking.img} alt="" /> */}
+              <div className=" ms-3">
+                <h5>{booking.name}</h5>
+                <h6>
                   Status: <span className="text-danger">{booking.status}</span>
-                </h5>
+                </h6>
+                <h6>Price: ${booking.price}</h6>
                 <div>
+                  <p className="mb-0">Name: {booking.userName}</p>
+                  <p className="mb-0">Email: {booking.email}</p>
+                  <p className="mb-0">Number: {booking.number}</p>
+                  <p className="mb-0">Gender: {booking.gender}</p>
                   <Button
                     onClick={() => {
                       handleDelete(booking._id);
