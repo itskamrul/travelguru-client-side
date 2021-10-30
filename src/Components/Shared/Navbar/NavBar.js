@@ -25,18 +25,22 @@ const NavBar = () => {
           <Nav.Link as={HashLink} to="/home">
             Home
           </Nav.Link>
-          <Nav.Link as={HashLink} to="/myBooking">
-            My Booking
-          </Nav.Link>
-          <Nav.Link as={HashLink} to="/allBooking">
-            All Booking
-          </Nav.Link>
-          <Nav.Link as={HashLink} to="/bookingDashboard">
-            Dashboard
-          </Nav.Link>
-          <Nav.Link as={HashLink} to="/addPlace">
-            Add Places
-          </Nav.Link>
+          {users.email && (
+            <Nav.Link as={HashLink} to="/myBooking">
+              My Booking
+            </Nav.Link>
+          )}
+
+          {users.email && (
+            <Nav.Link as={HashLink} to="/bookingDashboard">
+              Manage Booking
+            </Nav.Link>
+          )}
+          {users.email && (
+            <Nav.Link as={HashLink} to="/addPlace">
+              Add Places
+            </Nav.Link>
+          )}
           <Nav.Link as={HashLink} to="/about">
             About us
           </Nav.Link>
