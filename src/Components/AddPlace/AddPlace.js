@@ -16,7 +16,7 @@ const AddPlace = () => {
   };
   return (
     <div>
-      <div className=" d-flex justify-content-center align-item-center">
+      <div className=" w-50 mx-auto">
         <div style={{ borderRadius: '10px' }} className="shadow p-3 mt-3">
           <h1 style={{ color: '#2B6878', fontWeight: 'bold' }}>Add Place</h1>
           <form

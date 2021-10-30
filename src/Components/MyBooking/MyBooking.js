@@ -49,6 +49,7 @@ const MyBooking = () => {
               <img className="w-25 rounded" src={booking.img} alt="" />
               <div className="text-start ms-3">
                 <h4>{booking.name}</h4>
+                <h4>${booking.price}</h4>
                 <h5>
                   Status: <span className="text-danger">{booking.status}</span>
                 </h5>
@@ -60,9 +61,6 @@ const MyBooking = () => {
                     className="btn btn-success fw-bold py-2 px-3 fw-bold"
                   >
                     Cancel
-                  </Button>
-                  <Button className="btn btn-regular fw-bold ms-3">
-                    Order Now
                   </Button>
                 </div>
               </div>

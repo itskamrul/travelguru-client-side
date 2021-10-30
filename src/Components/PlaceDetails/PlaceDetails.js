@@ -2,7 +2,6 @@ import React from 'react';
 import { useParams } from 'react-router';
 import usePlaces from '../../hooks/usePlaces';
 import { useForm } from 'react-hook-form';
-import DatePicker from 'react-datepicker';
 import axios from 'axios';
 import useAuth from '../../hooks/useAuth';
 

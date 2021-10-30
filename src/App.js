@@ -14,6 +14,7 @@ import MyBooking from './Components/MyBooking/MyBooking';
 import PlaceDetails from './Components/PlaceDetails/PlaceDetails';
 import AllBooking from './Components/AllBooking/AllBooking';
 import BookingDash from './Components/BookingDash/BookingDash';
+import Support from './Components/Support/Support';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
             <Route path="/home">
               <Header></Header>
               <Places></Places>
+              <Support></Support>
             </Route>
             <PrivateRoute path="/allBooking">
               <AllBooking></AllBooking>

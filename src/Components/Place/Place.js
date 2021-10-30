@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Card, Col } from 'react-bootstrap';
+import { Card, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './Place.css';
 
