@@ -10,7 +10,7 @@ const MyBooking = () => {
 
   //get data
   useEffect(() => {
-    fetch(`http://localhost:5000/myBooking/${email}`)
+    fetch(`https://shrouded-forest-46188.herokuapp.com/myBooking/${email}`)
       .then(res => res.json())
       .then(data => {
         setBookings(data);
@@ -22,7 +22,7 @@ const MyBooking = () => {
   const handleDelete = id => {
     const handleConfirm = window.confirm('Are you sure to delete');
     if (handleConfirm) {
-      fetch(`http://localhost:5000/deleteBooking/${id}`, {
+      fetch(`https://shrouded-forest-46188.herokuapp.com/deleteBooking/${id}`, {
         method: 'DELETE',
         headers: {
           'content-type': 'application/json',

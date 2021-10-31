@@ -7,7 +7,7 @@ const BookingDash = () => {
 
   //get data
   useEffect(() => {
-    fetch('http://localhost:5000/allBooking')
+    fetch('https://shrouded-forest-46188.herokuapp.com/allBooking')
       .then(res => res.json())
       .then(data => {
         setBookings(data);
@@ -19,7 +19,7 @@ const BookingDash = () => {
   const handleDelete = id => {
     const handleConfirm = window.confirm('Are you sure to delete');
     if (handleConfirm) {
-      fetch(`http://localhost:5000/deleteBooking/${id}`, {
+      fetch(`https://shrouded-forest-46188.herokuapp.com/deleteBooking/${id}`, {
         method: 'DELETE',
         headers: {
           'content-type': 'application/json',
@@ -34,20 +34,22 @@ const BookingDash = () => {
 
   //handle approve
   const handleApprove = id => {
+    const handleConfirm = window.confirm('Are you sure to Update');
     console.log(id);
     const data = bookings.find(place => place._id === id);
     data.status = 'Approved';
-    console.log(data.status);
 
-    fetch(`http://localhost:5000/update/${id}`, {
-      method: 'PUT',
-      headers: {
-        'content-type': 'application/json',
-      },
-      body: JSON.stringify(data),
-    })
-      .then(res => res.json())
-      .then(result => console.log(result));
+    if (handleConfirm) {
+      fetch(`https://shrouded-forest-46188.herokuapp.com/update/${id}`, {
+        method: 'PUT',
+        headers: {
+          'content-type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      })
+        .then(res => res.json())
+        .then(result => console.log(result));
+    }
   };
 
   if (isLoading) {

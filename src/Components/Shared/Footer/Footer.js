@@ -48,7 +48,7 @@ const Footer = () => {
               }}
             ></div> */}
             <span className="border-bottom border-1 border-light w-75 mt-2 d-block pb-2">
-              Shipping Policy
+              Why Touring
             </span>
             <span className="border-bottom border-1 border-light w-75 mt-2 d-block pb-2">
               Compensation First
@@ -56,7 +56,7 @@ const Footer = () => {
             <span className="border-bottom border-1 border-light w-75 mt-2 d-block pb-2">
               My Account
             </span>
-            <span className="w-75 mt-2 d-block pb-2">Return Policy</span>
+            <span className="w-75 mt-2 d-block pb-2">Privacy Policy</span>
           </Col>
           <Col md={4}>
             <h4 className="text-start">Contact Us</h4>

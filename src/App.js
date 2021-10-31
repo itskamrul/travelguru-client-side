@@ -2,7 +2,7 @@ import './App.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Header from './Components/Shared/Header/Header';
 import NavBar from './Components/Shared/Navbar/NavBar';
-import About from './Components/About/About';
+import WhyTouring from './Components/WhyTouring/WhyTouring';
 import Login from './Components/Login/Login';
 import Footer from './Components/Shared/Footer/Footer';
 import NotFound from './Components/NotFound/NotFound';
@@ -15,6 +15,7 @@ import PlaceDetails from './Components/PlaceDetails/PlaceDetails';
 import BookingDash from './Components/BookingDash/BookingDash';
 import Support from './Components/Support/Support';
 import TravellerPackages from './Components/TravellerPackages/TravellerPackages';
+import AllPlaces from './Components/AllPlaces/AllPlaces';
 
 function App() {
   return (
@@ -47,8 +48,11 @@ function App() {
             <PrivateRoute path="/myBooking">
               <MyBooking></MyBooking>
             </PrivateRoute>
-            <Route path="/about">
-              <About></About>
+            <Route path="/whyTouring">
+              <WhyTouring></WhyTouring>
+            </Route>
+            <Route path="/allPlaces">
+              <AllPlaces></AllPlaces>
             </Route>
             <Route path="/login">
               <Login></Login>

@@ -4,7 +4,7 @@ import { Card, Col, Row } from 'react-bootstrap';
 const TravellerPackages = () => {
   const [packages, setPackages] = useState([]);
   useEffect(() => {
-    fetch('http://localhost:5000/travellerPackages')
+    fetch('https://shrouded-forest-46188.herokuapp.com/travellerPackages')
       .then(res => res.json())
       .then(data => {
         setPackages(data);

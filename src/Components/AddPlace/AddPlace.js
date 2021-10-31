@@ -7,12 +7,14 @@ const AddPlace = () => {
   const onSubmit = data => {
     console.log(data);
 
-    axios.post('http://localhost:5000/addPlace', data).then(res => {
-      if (res.data.insertedId) {
-        alert('added successfully');
-        reset();
-      }
-    });
+    axios
+      .post('https://shrouded-forest-46188.herokuapp.com/addPlace', data)
+      .then(res => {
+        if (res.data.insertedId) {
+          alert('added successfully');
+          reset();
+        }
+      });
   };
   return (
     <div>

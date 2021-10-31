@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Row } from 'react-bootstrap';
 import Place from '../Place/Place';
 
-const Places = () => {
+const AllPlaces = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [places, setPlaces] = useState([]);
   useEffect(() => {
@@ -27,10 +27,8 @@ const Places = () => {
         </div>
         <div>
           <Row xs={1} sm={2} md={3} className="g-4 bg-white rounded-3">
-            {places.map((place, index) => {
-              if (index < 6) {
-                return <Place key={place._id} place={place}></Place>;
-              }
+            {places.map(place => {
+              return <Place key={place._id} place={place}></Place>;
             })}
           </Row>
         </div>
@@ -39,4 +37,4 @@ const Places = () => {
   }
 };
 
-export default Places;
+export default AllPlaces;

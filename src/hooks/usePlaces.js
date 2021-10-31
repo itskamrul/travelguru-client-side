@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 const usePlaces = () => {
   const [places, setPlaces] = useState([]);
   useEffect(() => {
-    fetch('http://localhost:5000/places')
+    fetch('https://shrouded-forest-46188.herokuapp.com/places')
       .then(res => res.json())
       .then(data => setPlaces(data));
   }, []);

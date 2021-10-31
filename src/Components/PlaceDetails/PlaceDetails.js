@@ -19,12 +19,17 @@ const PlaceDetails = () => {
     displayPlace.address = data.address;
     displayPlace.status = 'pending';
 
-    axios.post('http://localhost:5000/bookingPlace', displayPlace).then(res => {
-      if (res.data.insertedId) {
-        alert('Booking successfully');
-        reset();
-      }
-    });
+    axios
+      .post(
+        'https://shrouded-forest-46188.herokuapp.com/bookingPlace',
+        displayPlace
+      )
+      .then(res => {
+        if (res.data.insertedId) {
+          alert('Booking successfully');
+          reset();
+        }
+      });
   };
 
   return (

@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { Carousel } from 'react-bootstrap';
 const Header = () => {
   useEffect(() => {
-    document.title = 'Home -Travel Guru';
+    document.title = 'Travel Guru';
   }, []);
 
   return (

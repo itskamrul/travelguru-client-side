@@ -25,6 +25,9 @@ const NavBar = () => {
           <Nav.Link as={HashLink} to="/home">
             Home
           </Nav.Link>
+          <Nav.Link as={HashLink} to="/allPlaces">
+            Destinations
+          </Nav.Link>
           {users.email && (
             <Nav.Link as={HashLink} to="/myBooking">
               My Booking
@@ -41,8 +44,8 @@ const NavBar = () => {
               Add Places
             </Nav.Link>
           )}
-          <Nav.Link as={HashLink} to="/about">
-            About us
+          <Nav.Link as={HashLink} to="/whyTouring">
+            Why Touring
           </Nav.Link>
 
           <li>{users?.displayName}</li>
