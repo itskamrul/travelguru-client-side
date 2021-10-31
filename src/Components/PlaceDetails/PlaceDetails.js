@@ -1,16 +1,26 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
-import usePlaces from '../../hooks/usePlaces';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
 import useAuth from '../../hooks/useAuth';
 
 const PlaceDetails = () => {
+  const [places, setPlaces] = useState([]);
+  const [isSubmit, setIsSubmit] = useState(null);
   const { register, handleSubmit, reset } = useForm();
   const { users } = useAuth();
   const { placeId } = useParams();
-  const places = usePlaces();
+  //get data
+  useEffect(() => {
+    fetch('https://shrouded-forest-46188.herokuapp.com/places')
+      .then(res => res.json())
+      .then(data => setPlaces(data));
+  }, [isSubmit]);
+
+  //find data
   const displayPlace = places.find(place => place._id == placeId);
+
+  // submit booking data
   const onSubmit = data => {
     displayPlace.userName = data.userName;
     displayPlace.email = data.email;
@@ -18,6 +28,7 @@ const PlaceDetails = () => {
     displayPlace.number = data.number;
     displayPlace.address = data.address;
     displayPlace.status = 'pending';
+    displayPlace._id = displayPlace._id + 1;
 
     axios
       .post(
@@ -27,8 +38,12 @@ const PlaceDetails = () => {
       .then(res => {
         if (res.data.insertedId) {
           alert('Booking successfully');
+          setIsSubmit(true);
           reset();
         }
+      })
+      .catch(error => {
+        console.log(error);
       });
   };
 
@@ -72,6 +87,7 @@ const PlaceDetails = () => {
                 {...register('userName', { required: true })}
               />
               <input
+                readOnly
                 defaultValue={users.email}
                 style={{
                   border: '2px solid #2B6878',

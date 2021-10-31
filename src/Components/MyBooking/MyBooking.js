@@ -5,8 +5,10 @@ import useAuth from '../../hooks/useAuth';
 const MyBooking = () => {
   const [bookings, setBookings] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [isDeleted, setIsDeleted] = useState(null);
   const { users } = useAuth();
   const email = users.email;
+  const pending = 'pending';
 
   //get data
   useEffect(() => {
@@ -16,7 +18,7 @@ const MyBooking = () => {
         setBookings(data);
         setIsLoading(false);
       });
-  }, [isLoading]);
+  }, [isDeleted]);
 
   //delete my booking place
   const handleDelete = id => {
@@ -29,7 +31,13 @@ const MyBooking = () => {
         },
       })
         .then(res => res.json())
-        .then(result => console.log(result));
+        .then(result => {
+          if (result.deletedCount) {
+            setIsDeleted(true);
+          } else {
+            setIsDeleted(false);
+          }
+        });
     }
     console.log(id);
   };
@@ -54,7 +62,12 @@ const MyBooking = () => {
                 <h4>{booking.name}</h4>
                 <h4>${booking.price}</h4>
                 <h5>
-                  Status: <span className="text-danger">{booking.status}</span>
+                  Status:
+                  {booking.status == 'pending' ? (
+                    <span className="text-danger"> {booking.status}</span>
+                  ) : (
+                    <span className="text-success"> {booking.status}</span>
+                  )}
                 </h5>
                 <div>
                   <Button

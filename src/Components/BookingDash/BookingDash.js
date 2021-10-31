@@ -4,6 +4,8 @@ import { Button } from 'react-bootstrap';
 const BookingDash = () => {
   const [bookings, setBookings] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [isDeleted, setIsDeleted] = useState(null);
+  const [isUpdate, setIsUpdate] = useState(null);
 
   //get data
   useEffect(() => {
@@ -13,7 +15,7 @@ const BookingDash = () => {
         setBookings(data);
         setIsLoading(false);
       });
-  }, [isLoading]);
+  }, [isDeleted]);
 
   //handle delete
   const handleDelete = id => {
@@ -26,13 +28,19 @@ const BookingDash = () => {
         },
       })
         .then(res => res.json())
-        .then(result => console.log(result));
+        .then(result => {
+          if (result.deletedCount) {
+            setIsDeleted(true);
+          } else {
+            setIsDeleted(false);
+          }
+        });
     }
 
     console.log(id);
   };
 
-  //handle approve
+  //handle approve modifiedCount
   const handleApprove = id => {
     const handleConfirm = window.confirm('Are you sure to Update');
     console.log(id);
@@ -48,7 +56,13 @@ const BookingDash = () => {
         body: JSON.stringify(data),
       })
         .then(res => res.json())
-        .then(result => console.log(result));
+        .then(result => {
+          if (result.modifiedCount) {
+            setIsDeleted(true);
+          } else {
+            setIsDeleted(false);
+          }
+        });
     }
   };
 
@@ -69,7 +83,12 @@ const BookingDash = () => {
               <div className=" ms-3">
                 <h5>{booking.name}</h5>
                 <h6>
-                  Status: <span className="text-danger">{booking.status}</span>
+                  Status:{' '}
+                  {booking.status == 'pending' ? (
+                    <span className="text-danger"> {booking.status}</span>
+                  ) : (
+                    <span className="text-success"> {booking.status}</span>
+                  )}
                 </h6>
                 <h6>Price: ${booking.price}</h6>
                 <div>
