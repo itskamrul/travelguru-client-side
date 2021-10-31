@@ -1,18 +1,17 @@
 # Travel Guru
 
-Travel Destinations booking website [TravelGuru](https://care-fast.web.app/).
+Travel Destinations booking website [TravelGuru](https://travelguru-a8530.web.app/).
 
 ## About our services
 
-We carry out health checks and healthy product services. We are one of the institutions in Bangladesh. We have been providing service for 10 years with confidence. Our buyer feedback is also very good.
+We’re an inquisitive team of creative problem solvers, tech wizards, and passionate travellers who work in tandem to bring life-changing touring experiences to the world. We’re proud to be leading the charge in bringing the touring industry online. If you love technology and travel, welcome home.
 
 ### `Our services`
-- Health check up
-- Full Body Checkup - Basic
-- Full Body Checkup - Standard
-- HealthyLife Advanced
-- Full Body Checkup - Advanced
-- Full Body Checkup - Premium
-- AAROGYAM SCREENING
+- Local guides
+- Hassle-free travel
+- No dull moments
+- Meet fellow travellers
+- Plenty of free time
+- Budgeting made simple
 
 
