@@ -14,4 +14,12 @@ We’re an inquisitive team of creative problem solvers, tech wizards, and passi
 - Plenty of free time
 - Budgeting made simple
 
+### `Futures`
+- Complete Web Application with dynamic destinations, orders, and manage orders.
+- Users can choose, Cancel the destination through the website. 
+- Firebase Authentication and Hosting also included.
+
+### `Technology`
+Javascript, JSX, React, React Router,  Axios, Bootstrap, Firebase, Node Js, Express Js, MongoDB, Heroku.
+
 
